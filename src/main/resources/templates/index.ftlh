@@ -68,7 +68,7 @@
 
         $('input[type=file]').on('change', function () {
             let file = this.files[0]
-            console.log(file.name)
+
             $(this).closest('.label-wrap').find('.name').html(file.name)
         });
 
