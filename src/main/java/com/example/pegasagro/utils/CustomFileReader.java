@@ -47,7 +47,7 @@ public class CustomFileReader {
 
                         double speedInKM = Double.parseDouble(matcher.group().replaceAll(",K", ""));
 
-                        if (speedInKM > 1) previousGPSData.replace("speed", speedInKM);
+                         previousGPSData.replace("speed", speedInKM);
 
                     }
                 } else if (inputString.matches("^\\$[A-Z]{2}GGA.*")) {
@@ -67,7 +67,7 @@ public class CustomFileReader {
                                     Double.parseDouble(dataLatLong[0]), Double.parseDouble(dataLatLong[1]));
                         }
 
-                        if (previousGPSData.get("speed") > 1 | rowCounterInFile == 0) {
+                        if (previousGPSData.get("speed") >= 1 | rowCounterInFile == 0) {
                             previousGPSData.put("latitude", Double.parseDouble(dataLatLong[0]));
                             previousGPSData.put("longitude", Double.parseDouble(dataLatLong[1]));
                         }
